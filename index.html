@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap" rel="stylesheet">    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <section id="main">
+        <nav>
+            <button class="openbtn">&#9776;</button>
+            <h1 id="evento">Evento</h1>
+        </nav>
+        <div id="sidebar">
+        <button class="closebtn">&times;</button>
+        <i class="fa fa-user-circle" aria-hidden="true"></i> 
+        <h4>Hello!</h4>
+        <a class="sidebar-item" href="index.html">Dashboard</a>
+        <a class="dropdown sidebar-item">Event Type</a>
+        <div class="submenu">
+            <a href="#" class="submenu-item">Work</a>
+            <a href="#" class="submenu-item">Personal</a>
+            <a href="#" class="submenu-item">Annual</a>
+        </div>
+        </div>
+        <div class="wrapper">
+            <div class="calender">
+                <div class="month">
+                    <div class="prev" onclick="changeMonth('prev')">
+                        <span>&#10094</span>
+                    </div>
+                    <div>
+                        <h2 id="current-month"></h2>
+                        <p id="current-day"></p>
+                    </div>
+                    <div class="next" onclick="changeMonth('next')">
+                        <span>&#10095</span>
+                    </div>
+                </div>
+                <div class="week">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- adding event form modal  -->
+    <div class="modal">
+        <div class="modal-header">
+            <h4>Add Event</h4>
+            <button class="close-modal">X</button>
+        </div>
+        <div class="modal-body">
+         <form>
+             <div class="row">
+                <label>Event Title</label>
+                <input type="text" id="event-title" class="form-control">
+             </div>
+            <div class="row">
+                <label>Event Type</label>
+                <select class="event-type form-control" id="event-type">
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Annual">Annual</option>
+                </select>
+            </div>
+            <div class="row">
+                <label>Date</label>
+                <input type="date" id="event-date" class="form-control">
+            </div>
+            <div class="row">
+                <label>Time Slot</label>
+                <div class="btn-group">
+                    <button type="button" class="timebtn" value="10:00 AM - 10:30 AM" id="slot1">10:00 AM - 10:30 AM</button>
+                    <button type="button" class="timebtn" value="11:00 AM - 11:30 AM" id="slot2">11:00 AM - 11:30 AM</button>
+                    <button type="button" class="timebtn" value="12:00 PM - 12:30 PM" id="slot3">12:00 PM - 12:30 PM</button>
+                </div>
+            </div>
+            <button type="submit" id="submit-event">Save Event</button>
+         </form>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+   <section id="event-lists">
+      <div class="list-header"><h3>List of Events</h3></div>
+      <div class="list-body"></div>
+   </section>
+
+    <script src="js/calender.js"></script>
+    <script src="js/sidebarAnimate.js"></script>
+    <script src="js/dropdownAnimate.js"></script>
+    <script src="js/localStorage.js"> </script>
+</body>
+</html>

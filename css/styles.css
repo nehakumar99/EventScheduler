@@ -1,0 +1,302 @@
+*{
+    margin:0;
+}
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: antiquewhite;
+    display: block;
+}
+#evento{
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    color: white;
+    -webkit-text-stroke-color: tomato;
+    -webkit-text-stroke-width: 1px;
+    margin-left: 10px;
+}
+nav{
+    display: flex;
+}
+#sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 0vw;
+    background-color: rgba(189, 105, 90, 0.836);
+    color: white;
+    z-index: 1;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+     overflow-x: hidden;
+     transition: all 0.3s ease-in-out;
+}
+#sidebar a{
+    padding: 5px 0;
+    text-decoration: none;
+}
+#sidebar .closebtn{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    background-color: transparent;
+    outline:none;
+    border:none;
+    cursor: pointer;
+    color: white;
+}
+.openbtn{
+    font-size: 30px;
+    color: tomato;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid tomato;
+    cursor: pointer;
+}
+.fa-user-circle{
+    font-size: 50px;
+}
+.dropdown{
+    cursor: pointer;
+}
+.sidebar-item,.submenu-item{
+    color: white;
+}
+.submenu{
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in;
+    display: none;
+}
+.wrapper{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 20px 10px;
+}
+.calender{
+    width: 80vw;
+    background-color: white;
+    box-shadow: 0px 0px 15px 3px rgb(0,0,0,0.4);
+    margin-right: 10px;
+}
+.month{
+    box-sizing: border-box;
+    background-color: tomato;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+}
+
+.week{
+    background-color: rgba(189, 105, 90, 0.836);
+    color: white;
+    display: flex;
+    padding: 5px 0px;
+}
+
+.week div{
+    width: 14.28%;
+    text-align: center;
+}
+.days{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+.days div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14.28%;
+    text-align: center;
+    height: 50px;
+    padding: 5px 0;
+    transition: all 0.3s;
+}
+.days div.daynum:hover{
+    background-color: wheat;
+    cursor: pointer;
+}
+.active{
+    background-color:tomato;
+}
+
+.prev, .next{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+.prev:hover , .next:hover{
+    background-color: rgba(255,255,255,0.6);
+    cursor: pointer;
+}
+.prev-month{
+    color: rgb(161, 158, 158);
+}
+.addbtn{
+    color:black;
+    position: relative;
+    left: 6px;
+    border: none;
+    outline:none;
+    border-radius: 50%;
+    font-weight: 600;
+    color: tomato;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.addbtn:hover{
+    color: white;
+    background-color: tomato;
+}
+.modal{
+    background-color: white;
+    border-radius: 6px;
+    position: fixed;
+    width: 75vw;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform:translate(-50%,-50%) scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+.modal-header{
+    margin: 0;
+    padding: 10px 5px;
+    text-align: left;
+    background-color: tomato;
+    color: white;
+    font-size: 20px;
+}
+.close-modal{
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 900;
+}
+.modal-body{
+    padding: 10px 15px;
+}
+.modal-body .row{
+display: flex;
+flex-direction: column;
+margin: 10px 0;
+}
+.modal-body label{
+    color: rgba(189, 105, 90, 0.9);
+}
+.modal.active{
+    transform:translate(-50%,-50%) scale(1);
+}
+.form-control{
+ border: none;
+ outline:none;
+ background-color:wheat;
+ padding: 8px 10px;
+ border-radius: 8px;
+ font-size: 16px;
+}
+.btn-group button{
+    margin: 2px;
+    cursor: pointer;
+}
+.btn-active{
+    background-color: rgba(189, 105, 90, 0.9);
+    color: white;
+    outline: none;
+    border: none;
+}
+
+#submit-event{
+    border: none;
+    outline:none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    background-color: rgba(189, 105, 90, 0.9);
+    color: white;
+    cursor: pointer;
+}
+#overlay{
+    opacity: 0;
+    background-color: rgb(0,0,0,0.6);
+}
+
+#overlay.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#event-lists{
+    margin: 0 auto;
+}
+.list-header{
+    color: white;
+    padding: 15px 20px;
+    background-color:tomato;
+}
+.card{
+    background-color: white;
+    height: 100px;
+    display: flex;
+    margin: 10px;
+
+}
+.left{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    min-width: 100px;
+}
+.right{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.event-title{
+    font-size: 18px;
+    border-bottom:2px solid tomato;
+}
+.event-date{
+    font-size:14px;
+}
+.event-time,.delete-event{
+    width: fit-content;
+    margin: 2px 0;
+    border: none;
+    outline: none;
+}
+.delete-event{
+    background-color: grey;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+}
